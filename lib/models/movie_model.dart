@@ -4,17 +4,18 @@
 
 /// 데이터 교환용
 class RawResponse {
+  // final Map<String, String> ? dates;
   final int page;
   final List<dynamic> results;
   final int totalPages;
   final int totalResults;
 
-
   RawResponse.fromJson(Map<String, dynamic> json)
-  : page = json['page'],
-  results = json['results'],
-  totalPages = json['total_pages'],
-  totalResults = json['total_results'];
+      // : dates = json['dates'],
+       : page = json['page'],
+        results = json['results'],
+        totalPages = json['total_pages'],
+        totalResults = json['total_results'];
 }
 
 /// 데이터 교환용

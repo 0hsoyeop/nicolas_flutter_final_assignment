@@ -28,4 +28,24 @@ class MovieService {
    }
    throw Error();
   }
+
+  static Future<List<MovieModel>> getNowPlayingMovies() async {
+    List<MovieModel> movieInstance = [];
+
+    Uri uri = Uri.parse("$baseUrl$nowPlaying");
+
+    var response = await http.get(uri);
+    if (response.statusCode == 200) {
+      var rawResponseInJson = jsonDecode(response.body);
+      var rawResponse = RawResponse.fromJson(rawResponseInJson);
+
+      var rawResult = rawResponse.results;
+      for (var elm in rawResult) {
+        movieInstance.add(MovieModel.fromJson(elm));
+      }
+      return movieInstance;
+    } else {
+    }
+    throw Error();
+  }
 }

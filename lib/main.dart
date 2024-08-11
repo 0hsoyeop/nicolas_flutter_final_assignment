@@ -13,15 +13,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           displayLarge: TextStyle(
             color: Colors.black,
-            fontSize: 20.0,
+            fontSize: 24.0,
             fontWeight: FontWeight.w600,
           ),
           displayMedium: TextStyle(
             color: Colors.black,
             fontSize: 15.0,
+            fontWeight: FontWeight.w600,
           ),
           displaySmall: TextStyle(
             color: Colors.white,
