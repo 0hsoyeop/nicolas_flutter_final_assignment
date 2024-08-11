@@ -68,4 +68,15 @@ class MovieService {
     }
     throw Error();
   }
+
+  static Future<MovieDetailModel> getMoviesDetail(int id) async {
+    Uri uri = Uri.parse("$baseUrl$detail?id=$id");
+
+    var response = await http.get(uri);
+    if (response.statusCode == 200) {
+      var rawResponseInJson = jsonDecode(response.body);
+      return MovieDetailModel.fromJson(rawResponseInJson);
+    }
+    throw Error();
+  }
 }

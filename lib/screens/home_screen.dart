@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nicolas_flutter_final_assignment/screens/detail_screen.dart';
 import 'package:nicolas_flutter_final_assignment/services/movie_service.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -29,13 +30,19 @@ class HomeScreen extends StatelessWidget {
                       child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return Container(
-                              clipBehavior: Clip.hardEdge,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => DetailScreen(movie: snapshot.data![index])));
+                              },
+                              child: Container(
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].backdropPath}'),
+
                               ),
-                              child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].backdropPath}'),
-                              
                             );
                           },
                           separatorBuilder: (context, index) {
@@ -67,15 +74,24 @@ class HomeScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  clipBehavior: Clip.hardEdge,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => DetailScreen(movie: snapshot.data![index])));
+                                  },
+                                  child: Hero(
+                                    tag: snapshot.data![index].id,
+                                    child: Container(
+                                      clipBehavior: Clip.hardEdge,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].posterPath}',
+                                      width: 160,
+                                      height: 160,
+                                      fit: BoxFit.none),
+                                    ),
                                   ),
-                                  child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].posterPath}',
-                                  width: 160,
-                                  height: 160,
-                                  fit: BoxFit.none),
                                 ),
                                 const SizedBox(height: 10.0),
                                 SizedBox(
@@ -115,15 +131,21 @@ class HomeScreen extends StatelessWidget {
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  clipBehavior: Clip.hardEdge,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => DetailScreen(movie: snapshot.data![index])));
+                                  },
+                                  child: Container(
+                                    clipBehavior: Clip.hardEdge,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].posterPath}',
+                                        width: 160,
+                                        height: 160,
+                                        fit: BoxFit.none),
                                   ),
-                                  child: Image.network('https://image.tmdb.org/t/p/w500/${snapshot.data![index].posterPath}',
-                                      width: 160,
-                                      height: 160,
-                                      fit: BoxFit.none),
                                 ),
                                 const SizedBox(height: 10.0),
                                 SizedBox(
