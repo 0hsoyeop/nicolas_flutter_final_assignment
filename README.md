@@ -1,16 +1,22 @@
-# nicolas_flutter_final_assignment
+# Final Assignment 
 
-A new Flutter project.
+노마드코더 'Flutter 웹툰 앱 만들기' 강좌 과제
+- Movie App 
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+https://github.com/user-attachments/assets/253ae729-27d6-4760-b7ee-0d3e80bda12f
 
-A few resources to get you started if this is your first Flutter project:
+### 개발 기간
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 2024/08/11
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
+### Widgets
+
+- [ListView.builder](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html)
+- [ListView.separated](https://api.flutter.dev/flutter/widgets/ListView/ListView.separated.html)
+- [ClipRRect](https://api.flutter.dev/flutter/widgets/ClipRRect-class.html)
+
